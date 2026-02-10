@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "GP-Team-Two-.slnx"
+    "dotnet.defaultSolution": "Combat Remake.slnx"
 }

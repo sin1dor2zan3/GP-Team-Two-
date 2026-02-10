@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 34f6f2fc84247c44ba80aea0bade288f
   - enabled: 1
-    path: Assets/Scenes/PVPTest.unity
-    guid: f52391810689eb942b56b855963cf119
-  - enabled: 1
     path: Assets/Scenes/CPUTest.unity
     guid: 918cf02b08d9f304987145ef15fbe101
   - enabled: 1

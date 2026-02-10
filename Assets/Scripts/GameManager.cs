@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
     public int player1Lives = 3;
     public int player2Lives = 3;
     public int enemyLives = 3;
-
-    public string gameSceneName = "MainMenu";
+    
+    public string[] levelScenes;
     public string winSceneName = "WinMenu";
     public string loseSceneName = "LoseMenu";
 
@@ -27,6 +27,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void ResetLives()
+    {
+        player1Lives = 3;
+        player2Lives = 3;
+        enemyLives = 3;
+    }
+
     // Called when something dies
     public void TankDestroyed(string tankTag)
     {
@@ -35,6 +42,7 @@ public class GameManager : MonoBehaviour
             player1Lives--;
             if (player1Lives <= 0)
             {
+                ResetLives();
                 SceneManager.LoadScene(loseSceneName);
                 return;
             }
@@ -44,7 +52,8 @@ public class GameManager : MonoBehaviour
             player2Lives--;
             if (player2Lives <= 0)
             {
-                SceneManager.LoadScene(loseSceneName);
+                ResetLives();
+                SceneManager.LoadScene(winSceneName);
                 return;
             }
         }
@@ -53,12 +62,14 @@ public class GameManager : MonoBehaviour
             enemyLives--;
             if (enemyLives <= 0)
             {
+                ResetLives();
                 SceneManager.LoadScene(winSceneName);
                 return;
             }
         }
 
         // Reload game scene for next round
-        SceneManager.LoadScene(gameSceneName);
+        int index = Random.Range(0, levelScenes.Length);
+        SceneManager.LoadScene(levelScenes[index]);
     }
 }

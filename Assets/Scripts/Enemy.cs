@@ -4,7 +4,6 @@ public class Enemy : MonoBehaviour
 {
     public float minMoveSpeed = 1.5f;
     public float maxMoveSpeed = 3.0f;
-
     public float turnSpeed = 0.5f;
 
     public float minDecisionTime = 1.5f;
@@ -12,16 +11,11 @@ public class Enemy : MonoBehaviour
 
     public float minShootCooldown = 0.8f;
     public float maxShootCooldown = 1.5f;
-
-    public float minShootAngle = 8f;
-    public float maxShootAngle = 18f;
-
     public float reactionDelay = 0.5f;
-    private float reactionTimer;
-    private bool playerInSight;
 
+    public float visionConeAngle = 60f;
+    public float visionDistance = 15f;
     public LayerMask shootBlockMask;
-    public float shootCheckDistance = 20f;
 
     public GameObject bulletPrefab;
     public Transform barrel;
@@ -29,11 +23,10 @@ public class Enemy : MonoBehaviour
 
     private float moveSpeed;
     private float shootCooldown;
-    private float shootAngleTolerance;
-
     private float decisionTimer;
     private float nextDecisionTime;
     private float lastShotTime;
+    private float reactionTimer;
 
     private Vector2 moveDir;
     private Transform cachedTransform;
@@ -60,14 +53,13 @@ public class Enemy : MonoBehaviour
     {
         Movement();
         HandleDecisionTimer();
-        TryShootAtPlayer();
+        TryShoot();
     }
 
-    public void RandomizeStats()
+    void RandomizeStats()
     {
         moveSpeed = Random.Range(minMoveSpeed, maxMoveSpeed);
         shootCooldown = Random.Range(minShootCooldown, maxShootCooldown);
-        shootAngleTolerance = Random.Range(minShootAngle, maxShootAngle);
     }
 
     void Movement()
@@ -128,50 +120,55 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void TryShootAtPlayer()
+    void TryShoot()
     {
         if (targetPlayer == null || barrel == null)
             return;
 
-        Vector2 toPlayer = targetPlayer.position - cachedTransform.position;
-        float angle = Vector2.Angle(cachedTransform.right, toPlayer);
-
-        if (angle >= shootAngleTolerance)
-        {
-            playerInSight = false;
-            return;
-        }
-
+        // Cooldown check
         if (Time.time - lastShotTime < shootCooldown)
             return;
 
+        Vector2 toPlayer = targetPlayer.position - cachedTransform.position;
+        float sqrDistance = toPlayer.sqrMagnitude;
+
+        // Distance check (squared for performance)
+        if (sqrDistance > visionDistance * visionDistance)
+        {
+            reactionTimer = 0f;
+            return;
+        }
+
+        // Angle check
+        float angle = Vector2.Angle(cachedTransform.right, toPlayer);
+        if (angle > visionConeAngle * 0.5f)
+        {
+            reactionTimer = 0f;
+            return;
+        }
+
+        // Line-of-sight check
         RaycastHit2D hit = Physics2D.Raycast(
             barrel.position,
-            barrel.right,
-            shootCheckDistance,
+            toPlayer.normalized,
+            visionDistance,
             shootBlockMask
         );
 
         if (hit.collider == null || hit.collider.transform != targetPlayer)
         {
-            playerInSight = false;
+            reactionTimer = 0f;
             return;
         }
 
-        if (!playerInSight)
-        {
-            playerInSight = true;
-            reactionTimer = 0f;
-        }
-
+        // Reaction delay
         reactionTimer += Time.deltaTime;
 
         if (reactionTimer >= reactionDelay)
         {
             Instantiate(bulletPrefab, barrel.position, barrel.rotation);
             lastShotTime = Time.time;
-            playerInSight = false;
-            HandleDecisionTimer();
+            reactionTimer = 0f;
         }
     }
 

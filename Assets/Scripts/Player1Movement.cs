@@ -27,6 +27,15 @@ public class Player1Movement : MonoBehaviour
     {
         Movement();
         Shooting();
+        QuitGame();
+    }
+
+    void QuitGame()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     void Shooting()
