@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class LoseMenu : MonoBehaviour {
+public class LoseMenuScript : MonoBehaviour {
 
     public void BackToMainMenuButton() {
         SceneManager.LoadScene("MainMenu");

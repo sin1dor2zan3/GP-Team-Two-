@@ -260,7 +260,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   levelScenes:
-  - CPUTest
+  - BathtubLevel
+  - SkyLevel1
+  - SkyLevel2
 --- !u!114 &259686682
 MonoBehaviour:
   m_ObjectHideFlags: 0
