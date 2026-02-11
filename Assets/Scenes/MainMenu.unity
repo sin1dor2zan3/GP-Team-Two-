@@ -259,6 +259,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ac24699da67314f8a60c950bc12c83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
+  levelScenes:
+  - BathtubLevel
+  - SkyLevel1
+  - SkyLevel2
 --- !u!114 &259686682
 MonoBehaviour:
   m_ObjectHideFlags: 0
