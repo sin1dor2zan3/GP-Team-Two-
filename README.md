@@ -30,7 +30,7 @@ Paola Suro - Sprite Artist
 
 
 
-Sinclair Zanfardino - Lead, Background Artist, Audio Designer
+Sinclair Zanfardino - Background Artist, Audio Designer
 
 
 
