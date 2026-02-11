@@ -21,6 +21,9 @@ public class Enemy : MonoBehaviour
     public Transform barrel;
     public Transform targetPlayer;
 
+    public AudioSource shootAudio;
+    public AudioClip shootClip;
+
     private float moveSpeed;
     private float shootCooldown;
     private float decisionTimer;
@@ -166,6 +169,11 @@ public class Enemy : MonoBehaviour
 
         if (reactionTimer >= reactionDelay)
         {
+            if (shootAudio != null && shootClip != null)
+            {
+                shootAudio.PlayOneShot(shootClip);
+            }
+
             Instantiate(bulletPrefab, barrel.position, barrel.rotation);
             lastShotTime = Time.time;
             reactionTimer = 0f;
