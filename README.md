@@ -109,7 +109,7 @@ Itch.io:
 
 * Added quitting with escape key
 * Added functionality to main, win, and lose menus
-* Randomized which level is chosen every round
+* Added randomization which level is chosen every round
 * Added health text that displays current health for player and enemy
 * Fixed bug caused by menus and relevant scripts having the same name
 * Added level scenes and fixed menus accordingly
