@@ -1,4 +1,4 @@
-# GP Team Two - Tank Game
+# GP Team Two - WE PLAY TANKS
 
 
 
@@ -30,7 +30,7 @@ Paola Suro - Sprite Artist
 
 
 
-Sinclair Zanfardino - Lead, Background Artist
+Sinclair Zanfardino - Background Artist, Audio Designer
 
 
 
