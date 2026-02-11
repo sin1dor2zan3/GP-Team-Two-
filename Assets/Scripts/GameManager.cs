@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public string winSceneName = "WinMenu";
     public string loseSceneName = "LoseMenu";
 
+    public AudioSource sfxAudio;
+    public AudioClip explosionClip;
+
     private void Awake()
     {
         // Singleton setup
@@ -30,6 +33,9 @@ public class GameManager : MonoBehaviour
     // Called when something dies
     public void TankDestroyed(string tankTag)
     {
+        if (sfxAudio != null && explosionClip != null)
+            sfxAudio.PlayOneShot(explosionClip);
+
         if (tankTag == "Player1")
         {
             player1Lives--;

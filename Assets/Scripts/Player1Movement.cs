@@ -11,6 +11,9 @@ public class Player1Movement : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform barrel;
 
+    public AudioSource shootAudio;
+    public AudioClip shootClip;
+
     private Transform cachedTransform;
 
     void Awake()
@@ -39,6 +42,7 @@ public class Player1Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            shootAudio.PlayOneShot(shootClip);
             Instantiate(bulletPrefab, barrel.position, barrel.rotation);
             lastShootTime = Time.time;
         }
