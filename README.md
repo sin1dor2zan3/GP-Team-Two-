@@ -123,3 +123,11 @@ Itch.io:
 
 * Fixed bug that had game trying to load wrong scene names
 * Fixed Pegasus bullets to display correct asset
+
+
+
+**Audio Credits**
+
+EVRetro on Freesound
+Link: https://freesound.org/people/EVRetro/
+
