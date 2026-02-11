@@ -62,11 +62,11 @@ ESC - Quit
 
 # GitHub \& Itch.io Links
 
-GitHub:
+GitHub: https://github.com/sin1dor2zan3/GP-Team-Two-
 
 
 
-Itch.io:
+Itch.io: https://sin1dor2zan3.itch.io/we-play-tanks
 
 
 
