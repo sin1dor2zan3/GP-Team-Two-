@@ -36,6 +36,44 @@ Sinclair Zanfardino - Background Artist, Audio Designer
 
 
 
+# Game Description
+
+"We Play Tanks" is a Player vs CPU top-down arena shooter based on the Atari 2600 game, "Combat", released in 1977. The player must destroy the enemy tank before it destroys them.
+
+
+
+# Instructions | How to Play
+
+Left-Click to navigate through menus
+
+W - Up
+
+A - Left
+
+S - Down
+
+D - Right
+
+SPACE - Shoot
+
+ESC - Quit
+
+
+
+# GitHub \& Itch.io Links
+
+GitHub:
+
+
+
+Itch.io:
+
+
+
+
+
+
+
 ## Development Changelog
 
 
@@ -78,3 +116,10 @@ Sinclair Zanfardino - Background Artist, Audio Designer
 * Added sound effects to tanks
 * Added background music
 * Added art assets to replace placeholder assets
+
+
+
+**Version 1.0**
+
+* Fixed bug that had game trying to load wrong scene names
+* Fixed Pegasus bullets to display correct asset

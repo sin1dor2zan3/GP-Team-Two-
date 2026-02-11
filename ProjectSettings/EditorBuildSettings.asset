@@ -11,9 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BathtubLevel.unity
     guid: 5701f5f1162e9864b987a9b215e5fabe
-  - enabled: 0
-    path: Assets/Scenes/SkyLevel1.unity
-    guid: f8f1dae8d22653745a01e1441ef9c1c2
   - enabled: 1
     path: Assets/Scenes/SkyLevel.unity
     guid: 520e946bd9df5bb4aa44c97eb86ebd19

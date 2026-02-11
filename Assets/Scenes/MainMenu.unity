@@ -352,8 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   levelScenes:
   - BathtubLevel
-  - SkyLevel1
-  - SkyLevel2
+  - SkyLevel
 --- !u!114 &259686682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1793,7 +1792,9 @@ MonoBehaviour:
   player1Lives: 3
   player2Lives: 3
   enemyLives: 3
-  levelScenes: []
+  levelScenes:
+  - BathtubLevel
+  - SkyLevel
   winSceneName: WinMenu
   loseSceneName: LoseMenu
   sfxAudio: {fileID: 1927870472}

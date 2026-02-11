@@ -1136,7 +1136,7 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 0fc8ae8b4b4784b97995d9b18bbec503, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -1415,7 +1415,7 @@ Transform:
   m_GameObject: {fileID: 614202108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.71, y: 0, z: 0}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
   m_LocalScale: {x: 0.5937795, y: 0.310415, z: 0.35476}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1579,7 +1579,7 @@ Transform:
   m_GameObject: {fileID: 836926806}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.71, y: 0, z: 0}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
   m_LocalScale: {x: 0.5937795, y: 0.310415, z: 0.35476}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1889,8 +1889,7 @@ MonoBehaviour:
   enemyLives: 3
   levelScenes:
   - BathtubLevel
-  - SkyLevel1
-  - SkyLevel2
+  - SkyLevel
   winSceneName: WinMenu
   loseSceneName: LoseMenu
   sfxAudio: {fileID: 0}
@@ -2083,7 +2082,7 @@ MonoBehaviour:
   moveSpeed: 2
   turnSpeed: 0.5
   shootCooldown: 1
-  bulletPrefab: {fileID: 5194708676038269270, guid: 4d8af3e9f4cb6420cad7f10d8d2957a7, type: 3}
+  bulletPrefab: {fileID: 5194708676038269270, guid: 866de6a47dbea134d98a91f0ea32709a, type: 3}
   barrel: {fileID: 614202109}
   shootAudio: {fileID: 614202110}
   shootClip: {fileID: 8300000, guid: 7e2bee72c549a4e8f91c49a2e7603606, type: 3}
